@@ -19,7 +19,11 @@ function App() {
   return (
     <div className="container">
       <Header title="hello folks" />
-      <Tasks tasks={tasks} onDelete={deleteTask} />
+      {tasks.length > 0 ? (
+        <Tasks tasks={tasks} onDelete={deleteTask} />
+      ) : (
+        "No tasks available"
+      )}
     </div>
   );
 }
